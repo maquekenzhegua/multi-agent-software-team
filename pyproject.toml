@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "multi-agent-software-team"
+version = "1.0.0"
+description = "Multi-Agent Software Engineering Team — 5 AI agents collaborating to solve GitHub issues end-to-end"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "AI Engineering from Scratch contributors"},
+]
+keywords = [
+    "ai", "agent", "multi-agent", "software-engineering",
+    "llm", "claude", "gpt", "gemini", "langgraph", "a2a",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.0",
+    "anthropic>=0.25",
+    "openai>=1.0",
+    "google-genai>=1.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-timeout>=2.0",
+]
+
+[project.scripts]
+team = "cli:main"
+
+[tool.setuptools.packages.find]
+include = ["src*", "cli*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools]
+py-modules = ["cli"]

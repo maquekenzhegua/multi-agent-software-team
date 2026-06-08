@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem -Force -Recurse -Name -File)",
+      "Bash(Select-String -Pattern \"__pycache__|\\\\.pyc\")",
+      "Bash(Select-Object -First 5)"
+    ]
+  }
+}

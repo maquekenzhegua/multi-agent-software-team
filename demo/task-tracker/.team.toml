@@ -1,0 +1,26 @@
+# Multi-Agent Team 项目配置
+[project]
+name = "task-tracker"
+
+[roles.architect]
+model = "claude-sonnet-4-7"
+max_tokens = 10000
+
+[roles.coder]
+model = "claude-sonnet-4-7"
+max_tokens = 12000
+parallel = 4
+
+[roles.reviewer]
+model = "claude-haiku-4-5"
+max_tokens = 8000
+
+[roles.tester]
+test_command = "pytest tests/ -v"
+max_tokens = 5000
+
+[repo]
+ignore_patterns = ["__pycache__", "*.pyc", ".git", ".team"]
+
+[budget]
+max_total_tokens = 100000
